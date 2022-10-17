@@ -1,0 +1,63 @@
+package javaapplication1;
+
+import java.util.*;
+
+public class JavaApplication1 {
+
+    public static void main(String[] args) {
+        int i, soma = 0, media = 0, par = 0, impar = 0;
+        int[] vetor = new int[6];
+        Scanner entrada = new Scanner(System.in);
+        for (i = 0; i < 6; i++) {
+            System.out.printf("\nInforme o %dº numero: ", (i + 1));
+            vetor[i] = entrada.nextInt();
+            soma = soma + vetor[i];
+            media = media + vetor[i];
+            if (vetor[i] % 2 == 0) {
+                par = par + 1;
+            } else {
+                impar = impar + 1;
+            }
+        }
+        System.out.print("\nOs números que você informou são: ");
+        for (i = 0; i < 6; i++) {
+            if (i == 5) {
+                System.out.print(vetor[i] + ".\n");
+            } else {
+                System.out.print(vetor[i] + ", ");
+            }
+        }
+        System.out.println("\nA soma desses números é: " + soma);
+        System.out.print("\nA media desses números arredondada para o número menor é: " + (media / i));
+        switch (impar) {
+            case 1:
+                System.out.printf("\n\nExiste %d número impar", impar);
+                break;
+            case 0:
+                System.out.printf("\n\nNão existem nenhum número impar", impar);
+                break;
+            default:
+                System.out.printf("\n\nExistem %d números impares", impar);
+                break;
+        }
+        switch (par) {
+            case 1:
+                System.out.printf("\n\nExiste %d número par", par);
+                break;
+            case 0:
+                System.out.printf("\n\nNão existem nenhum número par", par);
+                break;
+            default:
+                System.out.printf("\n\nExistem %d números pares", par);
+                break;
+        }
+        System.out.print("\n\nOs números que você informou de forma inversa são: ");
+        for (i = 5; i >= 0; i--) {
+            if (i == 0) {
+                System.out.print(vetor[i] + ".\n");
+            } else {
+                System.out.print(vetor[i] + ", ");
+            }
+        }
+    }
+}
